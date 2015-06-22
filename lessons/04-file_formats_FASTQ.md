@@ -8,6 +8,7 @@ minutes: 5
 ## Status & ToDo : Under Development
     
 * move the example data from DropBox to Figshare, ...
+* add link to FastQC lesson (remark Quality score)
 
 ## Learning Objectives 
 
@@ -43,10 +44,54 @@ Download the example FASTQ file and have a look at the first 4 lines
 head -n 4 ERR754084_1.100.fastq
 ```
 
+You should see this:
+
+    @ERR754084.1 HWI-ST486:305:C0RH5ACXX:1:1101:1189:2104/1 
+    GGGCAACATCAGAAGAAAACGCAGAGGGACAAATAAGAAAACTATTATTCCCNAAAACGAACCAGTCGACACAACCAAAACCAAAATGAACAAGTCAGAGG
+    +
+    @@@FDD?DDFFHAGEGG;FHI8HGHHEHE7FEGGGIIGGI9DFFGIIIIGGA#(-5@;@AE8B@A>CCB993<?888<8?BBCBBBCCCA@CCC:@D(4:?
+
 These 4 lines make up a FASTQ record. In a FASTQ file there are usually millions of records. Each record consists of 4 lines:
     
 * header for the sequence, always starts with '@'
 * sequence
 * header for the quality score, always starts with '+'. Often abbreviated to just '+' if it's the same as the sequence header (line 1)
 * the quality score for each base of the sequence
+
+### Header
+
+The header contains information on the sequencing machine, flow-cell, lane, etc
+
+For more details: [wikipedia](https://en.wikipedia.org/wiki/FASTQ_format#Illumina_sequence_identifiers)
+
+### Quality Score
+
+The quality score encodes the probability that a base call is wrong. Or in other words, how sure is it that the base correctly called? This is done using a Phred-score
+
+    Phred-score = -10 * log10(p)
+
+
+| Phred-score | Probability WRONG base call |
+|-------------|-------------|
+| 10 | 1/10 |
+| 20 | 1/100 |
+| 30 | 1/1000 |
+| 40 | 1/10000|
+
+The Phred-score ranges from 0 to 93 and uses ASCII 33 to 126 to represent the score. [ASCII](http://www.asciitable.com) provides for each character a number: '!' corresponds to 33 and a Phred Quality of zero and 'A' is ASCII 65 or a Phred score of 32 (65 - 33).
+
+#### Remark
+
+The Quality Score encoding has gone through different versions. The above information is valid for current data, but older data might use a different encoding. You can find detailed information [here](https://en.wikipedia.org/wiki/FASTQ_format#Encoding).
+
+#### Challenge
+
+Have a look at the full [ASCII](http://www.asciitable.com) table. 
+
+* What ASCII number corresponds to '?'
+* What is the corresponding Phred Score?
+* What is the probability of the base calling being correct?
+
+
+
 
