@@ -25,7 +25,7 @@ An example FASTQ file can be downloaded [here](https://dl.dropboxusercontent.com
 wget https://dl.dropboxusercontent.com/u/4121271/DataCarpentry/ERR754084_1.100.fastq
 ```
 
-This is a subset of 100 records of a real FASTQ file from [this](http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-3279) experiment. The original dataset can be downloaded as follows: ** Be aware this file is large: 1.6 GB! **
+This is a subset of 100 records of the FASTQ file from sample Col0_C1 [this](http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-3279) experiment. This is a dataset of the Arabidopsis thaliana accession Columbia 0 (the reference). The original dataset can be downloaded as follows: ** Be aware this file is large: 1.6 GB! **
     
 ```
 # HUGE FILE
