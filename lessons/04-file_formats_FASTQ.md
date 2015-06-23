@@ -70,13 +70,12 @@ The quality score encodes the probability that a base call is wrong. Or in other
 
     Phred-score = -10 * log10(p)
 
-
 | Phred-score | Probability WRONG base call |
 |-------------|-------------|
 | 10 | 1/10 |
 | 20 | 1/100 |
 | 30 | 1/1000 |
-| 40 | 1/10000|
+| 40 | 1/10000 |
 
 The Phred-score ranges from 0 to 93 and uses ASCII 33 to 126 to represent the score. [ASCII](http://www.asciitable.com) provides for each character a number: '!' corresponds to 33 and a Phred Quality of zero and 'A' is ASCII 65 or a Phred score of 32 (65 - 33).
 
@@ -91,7 +90,3 @@ Have a look at the full [ASCII](http://www.asciitable.com) table.
 * What ASCII number corresponds to '?'
 * What is the corresponding Phred Score?
 * What is the probability of the base calling being correct?
-
-
-
-
